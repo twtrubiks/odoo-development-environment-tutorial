@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# odoo development
+odoo-data/addons
+odoo-data/sessions
+odoo-data/filestore
