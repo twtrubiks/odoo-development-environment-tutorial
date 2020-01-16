@@ -194,13 +194,17 @@ python3 odoo-bin -w odoo -r odoo -c /home/twtrubiks/work/odoo13/config/odoo.conf
 
 ![alt tag](https://i.imgur.com/xEALOWg.png)
 
-### VSCode Debug
+### Odoo VSCode Debug
 
-[準備中 - Youtube Tutorial - 如何在 VS Code 中 Debug odoo - odoo13 - 從無到有]()
+[Youtube Tutorial - 如何在 VS Code 中 Debug - odoo13](https://youtu.be/cV8Sm5yYR38)
+
+開發環境非常建議使用 Linux , 我使用 Ubuntu 18.04。
+
+( 注意, windows 用戶需要做其他的設定, 否則你會發現無論如何啟用 debug 時, 都會直接關閉 )
 
 如果不懂 VSCode, 可參考 [Python in Visual Studio Code](https://github.com/twtrubiks/vscode_python_note)。
 
-可參考 [launch.json](https://github.com/twtrubiks/odoo-development-environment-tutorial/blob/master/.vscode/launch.json)
+VSCode 的設定可參考 [launch.json](https://github.com/twtrubiks/odoo-development-environment-tutorial/blob/master/.vscode/launch.json)
 
 ```json
 {
@@ -236,6 +240,27 @@ python3 odoo-bin -w odoo -r odoo -c /home/twtrubiks/work/odoo13/config/odoo.conf
 `program` odoo-bin 的位置。
 
 `-d` 指定 odoo database。
+
+先把 Expense (hr_expense) 裝起來 (我們將使用它來測試中斷點)，
+
+![alt tag](https://i.imgur.com/Yf4nHww.png)
+
+建立中斷點，中斷位置是 `addons/hr_expense/models/hr_expense.py` 裡的 `def create`
+(當建立檔案時, 會進入這個 function 中)
+
+![alt tag](https://i.imgur.com/SV4glxI.png)
+
+開啟 VSCode debug ( 快捷按鍵 F5 ),
+
+![alt tag](https://i.imgur.com/9jU39HC.png)
+
+到 odoo 中建立一筆 hr_expense, 當你要產生一筆 sheet 時,
+
+![alt tag](https://i.imgur.com/ptXxcXa.png)
+
+成功進入中斷點
+
+![alt tag](https://i.imgur.com/QPc994W.png)
 
 ## Reference
 * [odoo13 documentation](https://www.odoo.com/documentation/13.0/setup/install.html#linux)
