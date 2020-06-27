@@ -2,11 +2,15 @@
 
 建立 odoo 開發環境 ( source code )
 
-* [Youtube Tutorial - 如何建立 odoo 開發環境 - odoo13 - 從無到有](https://youtu.be/Yazci5Rd0p4)
-
 本篇文章將教大家如何使用 odoo source code 建立開發環境,
 
 如果你想要用 docker 建立, 可參考 [利用 docker 快速建立 odoo 環境](https://github.com/twtrubiks/odoo-docker-tutorial)
+
+## 目錄
+
+1. [建立 odoo 開發環境](https://github.com/twtrubiks/odoo-development-environment-tutorial#odoo-development-environment-tutorial) - [Youtube Tutorial - 如何建立 odoo 開發環境 - odoo13 - 從無到有](https://youtu.be/Yazci5Rd0p4)
+
+2. [Odoo VSCode Debug](https://github.com/twtrubiks/odoo-development-environment-tutorial#odoo-vscode-debug) - [Youtube Tutorial - 如何在 VS Code 中 Debug - odoo13](https://youtu.be/cV8Sm5yYR38)
 
 環境為 Ubuntu 18.04, 非常不推薦 Windows (你會踩雷):scream:
 
@@ -155,7 +159,7 @@ sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
 
 先確認 db 有啟動。
 
-設定 `odoo.conf`, 我會建議建立一個資料夾, 比較好維護,
+設定 [odoo.conf](odoo.conf), 我會建議建立一個資料夾, 比較好維護,
 
 ```conf
 [options]
