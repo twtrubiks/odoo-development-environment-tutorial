@@ -4,7 +4,9 @@
 
 本篇文章將教大家如何使用 odoo source code 建立開發環境,
 
-如果你想要用 docker 建立, 可參考 [利用 docker 快速建立 odoo 環境](https://github.com/twtrubiks/odoo-docker-tutorial)
+如果你想要用 docker 建立, 可參考 [利用 docker 快速建立 odoo 環境](https://github.com/twtrubiks/odoo-docker-tutorial).
+
+延伸閱讀 [手把手教大家撰寫 odoo 的 addons - 進階篇](https://github.com/twtrubiks/odoo-demo-addons-tutorial)
 
 ## 目錄
 
@@ -266,7 +268,40 @@ VSCode 的設定可參考 [launch.json](https://github.com/twtrubiks/odoo-develo
 
 ![alt tag](https://i.imgur.com/QPc994W.png)
 
+### 說明 dbfilter
+
+這邊特別說明一下 [odoo.conf](odoo.conf) 中的 dbfilter
+
+```conf
+[options]
+......
+;The '^' means start of line and the '$' end of line,
+;so '^%d$' only filter db with name 'hostname' following the example.
+;dbfilter = ^%d$
+```
+
+簡單說, 就是可以透過 dbfilter 去選擇(濾)對應的 db (透過網址),
+
+因為一個 odoo 可以有非常多的 db, 但你可能不想讓A客戶看到B客戶的資料庫,
+
+就很適合使用 dbfilter 這個參數.
+
+`dbfilter = ^%d$` 這個 `^` 代表的是開始的符號, `$` 代表的是結束的符號.
+
+所以如果今天這樣設定, db 名稱有, `twtrubiks`  `twtrubiks01`  `twtrubiks02`,
+
+然後你的網址是 `www.twtrubiks.com`, 當你進去網址時, 只會看到 `twtrubiks` 這個 db:exclamation:
+
+如果你也想看到 `twtrubiks01`  `twtrubiks02`, 這樣要改成 `dbfilter = ^%d`
+
+也就是把 `$` 拿掉.
+
+看文字說明可能很複雜:scream: 大家可以自己玩玩看, 其實是不難的哦:smile:
+
+延伸閱讀 [手把手教大家撰寫 odoo 的 addons - 進階篇](https://github.com/twtrubiks/odoo-demo-addons-tutorial)
+
 ## Reference
+
 * [odoo13 documentation](https://www.odoo.com/documentation/13.0/setup/install.html#linux)
 * [Odoo](https://www.odoo.com/)
 
