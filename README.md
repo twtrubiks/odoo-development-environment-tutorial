@@ -28,6 +28,12 @@ odoo 我們留在最後再安裝:smile:
 
 而且會遇到不少很怪的問題。
 
+注意:exclamation::exclamation: 如果你是使用 Ubuntu 20.04, 預設的 python 是 3.8,
+
+對 odoo 來說太新了, 安裝會有很多問題, 建議安裝 python3.6 (這版本裝 odoo 比較好建立環境)
+
+`sudo apt-get install -y python3.6-venv`
+
 ### postgresql
 
 這邊你可以選擇安裝到本機, 但我自己是喜歡把 db 這部份安裝到 docker,
@@ -39,7 +45,7 @@ version: '3.5'
 services:
 
   db:
-    image: postgres:10
+    image: postgres:10.9
     ports:
       - "5432:5432"
     environment:
@@ -61,6 +67,14 @@ volumes:
 然後建議依照 [在 Linux 中自動啟動 docker](https://github.com/twtrubiks/docker-tutorial/tree/master/docker-auto-run-linux) 讓他開機自動啟動。
 
 (這樣就不用每次都要去啟動 db 了)
+
+### pgadmin4
+
+可參考 [利用 docker 快速建立 pgadmin4 以及 Ubuntu 本機如何安裝 pgadmin4](https://github.com/twtrubiks/docker-pgadmin4-tutorial)
+
+建議把 postgresql-client-12 安裝起來, 不然 odoo 可能無法還原備份 db.
+
+`sudo apt install postgresql-client-12`
 
 ### wkhtmltopdf
 
