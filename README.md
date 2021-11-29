@@ -88,6 +88,20 @@ wkhtmltopdf --version
 
 這邊推薦的版本為 0.12.5。
 
+如果你在 odoo 列印 PDF 時, 遇到以下的錯誤
+
+```text
+Wkhtmltopdf failed (error code: -8). Message: b'' error
+```
+
+![alt tag](https://i.imgur.com/0uac0Ok.png)
+
+這是字型的問題, 請安裝字型
+
+```cmd
+sudo apt install ttf-mscorefonts-installer
+```
+
 ### odoo
 
 clone odoo repo
