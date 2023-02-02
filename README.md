@@ -223,6 +223,32 @@ pip3 install --upgrade --force-reinstall --no-binary :all: lxml==3.7.1
 
 解決後再重新安裝 requirements.txt 即可.
 
+### odoo16
+
+這邊紀錄一下, odoo16 環境的建立,
+
+首先是 python 的版本, python 3.9 or python 3.8 都可以,
+
+如果出現底下的錯誤訊息,
+
+```text
+ERROR: Failed building wheel for python-ldap
+```
+
+一樣安裝下面指令就對了(請注意自己的 python 版本)
+
+```python
+sudo apt-get install build-essential python3.9-dev libsasl2-dev libldap2-dev libssl-dev
+```
+
+另外是如果你有佈署, 會發現有一點點不一樣,
+
+因為 odoo16 開始 longpolling 變 websocket 了 (效能更好),
+
+所以設定上會有點不同, 詳細說明請參考官方文件
+
+[https://www.odoo.com/documentation/16.0/administration/install/deploy.html](https://www.odoo.com/documentation/16.0/administration/install/deploy.html)
+
 ### 設定 odoo 環境
 
 先確認 db 有啟動。
