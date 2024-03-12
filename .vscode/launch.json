@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "odoo",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             // "stopOnEntry": true,
             "pythonPath": "/home/twtrubiks/Documents/venv/odoo13/bin/python3",
@@ -21,6 +21,15 @@
                 "-c",
                 "/home/twtrubiks/work/odoo13/config/odoo.conf"
             ]
-        }
+        },
+        {
+            "name": "odoo attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 19000
+            },
+        },
     ]
 }

@@ -362,6 +362,47 @@ VSCode 的設定可參考 [launch.json](https://github.com/twtrubiks/odoo-develo
 
 ![alt tag](https://i.imgur.com/QPc994W.png)
 
+#### Odoo VSCode Debug - attach
+
+這邊補充另一種方法 debug, 使用 attach 的方式,
+
+`request` 主要有 `launch` 和 `attach`,
+
+需要安裝 `pip install debugpy`,
+
+可參考 [Python Debugger](https://github.com/twtrubiks/vscode_python_note?tab=readme-ov-file#python-debugger),
+
+[launch.json](https://github.com/twtrubiks/odoo-development-environment-tutorial/blob/master/.vscode/launch.json) 設定如下,
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "odoo attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 19000
+            },
+        },
+    ]
+}
+```
+
+先打開一個 terminal 執行
+
+```cmd
+python3 -m debugpy --listen 0.0.0.0:19000 odoo-bin -d odoo -c config/odoo.conf
+```
+
+注意兩邊設定的 port 要一樣, 這邊統一設定 19000 port,
+
+再開一個 terminal 去執行 odoo vscode 的中斷點, 即可順利 debug.
+
+通常這種方式使用在已經執行的外部程式, 或是你執行在 docker 中.
+
 ### 說明 dbfilter
 
 這邊特別說明一下 [odoo.conf](odoo.conf) 中的 dbfilter
