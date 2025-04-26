@@ -14,21 +14,21 @@
 
 2. [Odoo VSCode Debug](https://github.com/twtrubiks/odoo-development-environment-tutorial#odoo-vscode-debug) - [Youtube Tutorial - 如何在 VS Code 中 Debug - odoo13](https://youtu.be/cV8Sm5yYR38)
 
-環境為 Ubuntu 18.04, 非常不推薦 Windows (你會踩雷):scream:
+環境為 Ubuntu 18.04, 非常不推薦 Windows (你會踩雷) :scream:
 
 ## Prepare
 
 需要準備 Ubuntu 18.04 + odoo (source code) + postgresql + wkhtmltopdf + VS Code。
 
-odoo 我們留在最後再安裝:smile:
+odoo 我們留在最後再安裝 :smile:
 
 ### Ubuntu 18.04
 
-前面說過了, 不推薦 Windows 開發環境, 你會被 debug 搞死, 相信我:smirk:
+前面說過了, 不推薦 Windows 開發環境, 你會被 debug 搞死, 相信我 :smirk:
 
 而且會遇到不少很怪的問題。
 
-注意:exclamation::exclamation: 如果你是使用 Ubuntu 20.04, 預設的 python 是 3.8,
+注意 :exclamation: :exclamation: 如果你是使用 Ubuntu 20.04, 預設的 python 是 3.8,
 
 對 odoo 來說太新了, 安裝會有很多問題, 建議安裝 python3.6 (這版本裝 odoo 比較好建立環境)
 
@@ -425,13 +425,13 @@ python3 -m debugpy --listen 0.0.0.0:19000 odoo-bin -d odoo -c config/odoo.conf
 
 所以如果今天這樣設定, db 名稱有, `twtrubiks`  `twtrubiks01`  `twtrubiks02`,
 
-然後你的網址是 `www.twtrubiks.com`, 當你進去網址時, 只會看到 `twtrubiks` 這個 db:exclamation:
+然後你的網址是 `www.twtrubiks.com`, 當你進去網址時, 只會看到 `twtrubiks` 這個 db :exclamation:
 
 如果你也想看到 `twtrubiks01`  `twtrubiks02`, 這樣要改成 `dbfilter = ^%d`
 
 也就是把 `$` 拿掉.
 
-看文字說明可能很複雜:scream: 大家可以自己玩玩看, 其實是不難的哦:smile:
+看文字說明可能很複雜 :scream: 大家可以自己玩玩看, 其實是不難的哦 :smile:
 
 延伸閱讀 [手把手教大家撰寫 odoo 的 addons - 進階篇](https://github.com/twtrubiks/odoo-demo-addons-tutorial)
 
@@ -442,7 +442,7 @@ python3 -m debugpy --listen 0.0.0.0:19000 odoo-bin -d odoo -c config/odoo.conf
 
 ## Donation
 
-文章都是我自己研究內化後原創，如果有幫助到您，也想鼓勵我的話，歡迎請我喝一杯咖啡:laughing:
+文章都是我自己研究內化後原創，如果有幫助到您，也想鼓勵我的話，歡迎請我喝一杯咖啡 :laughing:
 
 綠界科技ECPAY ( 不需註冊會員 )
 
